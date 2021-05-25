@@ -6,6 +6,11 @@ Tweet polarization can be useful in many analysis as a extra factor. However, be
 
 *This project is highly dependant on snorkel.ai*
 
+Contents:
+- [Usage](#Usage)
+- [TODO](#TODO)
+- [Reference](#Reference)
+
 
 ## Usage
 
@@ -44,6 +49,17 @@ for i, t in enumerate(text):
 # Shaa shaa T1 sda                                                               => NEGATIVE (1.0)
 # Гоё сайхан үгс яахав ээ. Мөрийн хөтөлбөр уншмаар байна?                        => ABSTRAIN (0.999)
 ```
+
+## TODO
+These are things you can collaborate
+
+- [ ] Negative list completion
+- [ ] Positive list creation
+- [ ] Negative list completion
+- [ ] Labeling Function addition
+    - The MOST IMPORTANT part of this code is [labeling functions build](src/labeling_functions/__init__.py)
+- [ ] Experiment with hand labeled data
+- [ ] Create (well validated) 1000-row test set 
 
 
 ## Reference
