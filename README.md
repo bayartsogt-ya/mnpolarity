@@ -36,6 +36,13 @@ for i, t in enumerate(text):
     pred = "NEGATIVE" if preds[i] == 1 else "ABSTRAIN"
     prob = probs[i]
     print(f"{t:90s} => {pred} ({round(prob[preds[i]], 3)})")
+
+# эд нарыг үзэн ядаж байна                                                       => NEGATIVE (1.0)
+# #Утаа г үзэн ядаж байна..                                                      => NEGATIVE (1.0)
+# Өө тэнэг сда вэ. Орлого арав дахин өсгөж бхад хариуцлага ярих хэцүү шд гшш     => NEGATIVE (1.0)
+# Чи ямар тэнэг сда вэ. Одоо чамтай - чиний миний санал зөв гэж би маргах уу     => NEGATIVE (1.0)
+# Shaa shaa T1 sda                                                               => NEGATIVE (1.0)
+# Гоё сайхан үгс яахав ээ. Мөрийн хөтөлбөр уншмаар байна?                        => ABSTRAIN (0.999)
 ```
 
 
