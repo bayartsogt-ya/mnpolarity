@@ -1,0 +1,17 @@
+data:
+  twitter_dump: ub_500km_2011_2019
+  path_to_negative_words: negative_words.txt
+  path_to_negative_phrases: negative_phrases.txt
+  path_to_negative_emojis: negative_emojis.txt
+  columns:
+    - username
+    - tweet
+    - likes_count
+
+twint:
+  Near: "Ulaanbaatar"
+  Limit: 10000
+  Count: True
+  Store_csv: True
+  Until: "2020-12-31"
+  Hide_output: True

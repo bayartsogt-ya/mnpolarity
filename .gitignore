@@ -1,0 +1,12 @@
+*__pycache__*
+.pytest_cache
+.vscode
+.ipynb_checkpoints
+.DS_Store
+
+# notebooks
+*.ipynb
+
+# folders
+data
+output
