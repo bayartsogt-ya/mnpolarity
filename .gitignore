@@ -4,9 +4,12 @@
 .ipynb_checkpoints
 .DS_Store
 
+<<<<<<< HEAD
 # notebooks
 *.ipynb
 
+=======
+>>>>>>> fb8c84b0973bbde1ae9dbfd528d5b5525d93f332
 # folders
 data
 output
