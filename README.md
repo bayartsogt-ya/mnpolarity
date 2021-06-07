@@ -7,10 +7,11 @@ Tweet polarization can be useful in many analysis as an extra factor. However, b
 *This project is highly dependant on snorkel.ai*
 
 Contents:
-- [Usage](#Usage)
 - [Installation](#Installation)
-- [Structure](#Structure)
+- [Usage](#Usage)
 - [Train Simplest Model](#Train-Simplest-Model)
+- [Structure](#Structure)
+- [How can you improve](#How-can-you-improve)
 - [TODO](#TODO)
 - [Reference](#Reference)
 
