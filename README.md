@@ -1,4 +1,4 @@
-# Weakly-Supervised Polarity Classification in Mongolian
+# Mongolian Polarity Detection in Weakly Supervised manner
 
 `#nolabel #tweet #classification #snorkel #weaklysupervised #dataprogramming #software2.0` 
 
@@ -31,6 +31,11 @@ git clone https://github.com/bayartsogt-ya/mnpolarity.git && cd mnpolarity
 pip install -r requirements.txt
 ```
 
+## Train Simplest Model
+```
+python train_simplest.py
+```
+
 ## Structure
 ```
 .
@@ -60,11 +65,6 @@ pip install -r requirements.txt
 └── ...
 ```
 
-## Train Simplest Model
-```
-python train_simplest.py
-```
-
 ## How can you improve
 - Improve [Negative List](./data/labeling_functions/negative)
 - Add more [custom labeling functions](./mnpolarity/labeling_functions/custom_lfs.py)
@@ -88,7 +88,7 @@ python train_simplest.py
 ```
 @misc{mnpolarity,
   author = {Bayartsogt Yadamsuren},
-  title = {Weakly-Supervised Polarity Classification in Mongolian},
+  title = {Mongolian Polarity Detection in Weakly Supervised manner},
   year = {2021},
   publisher = {GitHub},
   journal = {GitHub repository},
