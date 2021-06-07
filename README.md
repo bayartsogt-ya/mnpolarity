@@ -14,6 +14,11 @@ Contents:
 - [TODO](#TODO)
 - [Reference](#Reference)
 
+## Installation
+```
+git clone https://github.com/bayartsogt-ya/mnpolarity.git && cd mnpolarity
+pip install -r requirements.txt
+```
 
 ## Usage
 ```python
@@ -23,12 +28,6 @@ Contents:
 >>> prediction = model.predict("Чи ямар тэнэг сда вэ. Одоо чамтай - чиний миний санал зөв гэж би маргах уу")  # https://twitter.com/hariad_uyanga/status/1253729084858761216")
 >>> prediction["label"]
 NEGATIVE
-```
-
-## Installation
-```
-git clone https://github.com/bayartsogt-ya/mnpolarity.git && cd mnpolarity
-pip install -r requirements.txt
 ```
 
 ## Train Simplest Model

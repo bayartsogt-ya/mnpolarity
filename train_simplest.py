@@ -47,7 +47,7 @@ if __name__ == "__main__":
     lfs = get_all_lfs()
 
     print("--------------------- 0. Read Data ---------------------")
-    df = read_all_train_data(config['data_dir'], include_twitter_dump=False)
+    df = read_all_train_data(config['data_dir'], include_twitter_dump=True)
     print(f"Data Loaded df.shape={df.shape}")
 
     print("--------------------- 1. Snorkeling ---------------------")
