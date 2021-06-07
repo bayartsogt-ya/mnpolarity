@@ -1,5 +1,5 @@
 import pytest
-from src.labeling_functions import get_all_lfs
+from mnpolarity.labeling_functions import get_all_lfs
 
 
 @pytest.mark.filterwarnings("ignore:DeprecationWarning")

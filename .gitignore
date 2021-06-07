@@ -4,9 +4,14 @@
 .ipynb_checkpoints
 .DS_Store
 
+*.egg-info
+
 # notebooks
 *.ipynb
 
 # folders
 data
 output
+build
+dist
+examples

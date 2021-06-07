@@ -4,7 +4,7 @@ from .utils import read_config
 # --------------- Configuration ---------------
 package_dir = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    "..",
+    "..", "..",
 )
 
 config = read_config(

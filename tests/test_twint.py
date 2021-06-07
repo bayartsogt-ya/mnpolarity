@@ -1,6 +1,6 @@
 import os
-from src.config import config
-from src.twint_helper import getAndSaveTweetsByKeyword
+from mnpolarity.config import config
+from mnpolarity.twint_helper import getAndSaveTweetsByKeyword
 
 
 def test_twint():

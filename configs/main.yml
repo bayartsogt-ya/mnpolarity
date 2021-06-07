@@ -3,10 +3,6 @@ data:
   path_to_negative_words: negative_words.txt
   path_to_negative_phrases: negative_phrases.txt
   path_to_negative_emojis: negative_emojis.txt
-  columns:
-    - username
-    - tweet
-    - likes_count
 
 twint:
   Near: "Ulaanbaatar"

@@ -49,14 +49,13 @@ def read_config(path: str) -> dict:
 
 def read_tweet_dump(directory: str) -> pd.DataFrame:
 
-    from .config import config
-
     ll = sorted(glob(os.path.join(directory, "*.csv")))
     if len(ll) == 0:
         raise Exception(f"No csv data found inside {directory}")
 
-    df = pd.DataFrame(columns=config['data']['columns'])
+    df = pd.DataFrame(columns=['username', 'tweet', 'likes_count'])
     for l in tqdm(ll):
-        df = df.append(pd.read_csv(l, usecols=config['data']['columns']))
+        df = df.append(pd.read_csv(
+            l, usecols=['username', 'tweet', 'likes_count']))
 
     return df

@@ -1,4 +1,4 @@
-from src.config import config
+from mnpolarity.config import config
 
 
 def test_config():
