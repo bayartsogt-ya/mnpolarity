@@ -7,7 +7,7 @@ def getAndSaveTweetsByKeyword(keyword: str) -> bool:
     twint_config = config["twint"]
     twint_config["Search"] = keyword,
     twint_config["Output"] = os.path.join(
-        config["data_dir"], "twint", f"{keyword}.csv"
+        config["data_dir"], "train", "twint", f"{keyword}.csv"
     )
 
     if os.path.isfile(twint_config["Output"]):

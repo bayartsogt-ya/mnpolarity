@@ -40,7 +40,6 @@ def read_config(path: str) -> dict:
     with open(path, 'r') as stream:
         try:
             config = yaml.safe_load(stream)
-            print(f"""---------- CONFIG ----------\n{config}\n""")
         except yaml.YAMLError as exc:
             print(exc)
 
@@ -57,5 +56,21 @@ def read_tweet_dump(directory: str) -> pd.DataFrame:
     for l in tqdm(ll):
         df = df.append(pd.read_csv(
             l, usecols=['username', 'tweet', 'likes_count']))
+
+    return df
+
+
+def read_all_train_data(data_dir: str, include_twitter_dump: bool = True) -> pd.DataFrame:
+
+    df = pd.DataFrame(columns=['username', 'tweet', 'likes_count'])
+
+    category_list = ['twint']
+
+    if include_twitter_dump:
+        category_list.append('twitter_dump')
+
+    for _category in category_list:
+        df = df.append(read_tweet_dump(
+            os.path.join(data_dir, 'train', _category)))
 
     return df

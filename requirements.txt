@@ -6,4 +6,6 @@ pytest==6.2.4
 PyYAML==5.4.1
 snorkel==0.9.7
 tqdm==4.60.0
+joblib==1.0.1
+scikit-learn==0.24.2
 twint @ git+https://github.com/twintproject/twint.git@e7c8a0c764f6879188e5c21e25fb6f1f856a7221

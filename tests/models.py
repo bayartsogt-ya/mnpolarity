@@ -17,7 +17,3 @@ def test_predict():
     assert 'prob' in result
     assert 'prettier' in result
     assert result['label'] == 'NEGATIVE'
-
-
-def test_train():
-    sklearner.train()

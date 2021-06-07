@@ -1,6 +1,6 @@
-# Weakly-Supervised Tweet Sentiment Classification
+# Weakly-Supervised Polarity Classification in Mongolian
 
-`#nolabel #tweet #classification #snorkel #weaklysupervised`
+`#nolabel #tweet #classification #snorkel #weaklysupervised #dataprogramming #software2.0` 
 
 Tweet polarization can be useful in many analysis as an extra factor. However, because of the lack of labeled data in Mongolian (low resource language), it is hard to make progress. So in this repo, we will try to improve our classification model using *data programming*.
 
@@ -8,47 +8,69 @@ Tweet polarization can be useful in many analysis as an extra factor. However, b
 
 Contents:
 - [Usage](#Usage)
+- [Installation](#Installation)
+- [Structure](#Structure)
+- [Train Simplest Model](#Train-Simplest-Model)
 - [TODO](#TODO)
 - [Reference](#Reference)
 
 
 ## Usage
-
 ```python
-import joblib
-
-vectorizer = joblib.load("output/1621912006.721575/vectorizer.pkl")
-sklearn_model = joblib.load("output/1621912006.721575/sklearn_model.pkl")
-
-text = [
-    "эд нарыг үзэн ядаж байна",
-    "#Утаа г үзэн ядаж байна..",  # https://twitter.com/tsbat_IT/status/937989630472761344
-    "Өө тэнэг сда вэ. Орлого арав дахин өсгөж бхад хариуцлага ярих хэцүү шд гшш",  # https://twitter.com/gt_log/status/1338014887407091713
-    "Чи ямар тэнэг сда вэ. Одоо чамтай - чиний миний санал зөв гэж би маргах уу",  # https://twitter.com/hariad_uyanga/status/1253729084858761216
-    "Shaa shaa T1 sda",  # https://twitter.com/Orchidz11/status/1315561414883500032
-    "Гоё сайхан үгс яахав ээ. Мөрийн хөтөлбөр уншмаар байна?"  # https://twitter.com/enzia3/status/1396662686042238981
-]
-
-vectors = vectorizer.transform([t.lower() for t in text])
-probs = sklearn_model.predict_proba(vectors)
-
-preds = probs.argmax(-1)
-for i, t in enumerate(text):
-    pred = "NEGATIVE" if preds[i] == 1 else "ABSTRAIN"
-    prob = probs[i]
-    print(f"{t:90s} => {pred} ({round(prob[preds[i]], 3)})")
-
-# эд нарыг үзэн ядаж байна                                                       => NEGATIVE (1.0)
-# #Утаа г үзэн ядаж байна..                                                      => NEGATIVE (1.0)
-# Өө тэнэг сда вэ. Орлого арав дахин өсгөж бхад хариуцлага ярих хэцүү шд гшш     => NEGATIVE (1.0)
-# Чи ямар тэнэг сда вэ. Одоо чамтай - чиний миний санал зөв гэж би маргах уу     => NEGATIVE (1.0)
-# Shaa shaa T1 sda                                                               => NEGATIVE (1.0)
-# Гоё сайхан үгс яахав ээ. Мөрийн хөтөлбөр уншмаар байна?                        => ABSTRAIN (0.999)
+>>> from mnpolarity.models import SimplestModel
+>>> model = SimplestModel()
+>>> model.load()
+>>> prediction = model.predict("Чи ямар тэнэг сда вэ. Одоо чамтай - чиний миний санал зөв гэж би маргах уу")  # https://twitter.com/hariad_uyanga/status/1253729084858761216")
+>>> prediction["label"]
+NEGATIVE
 ```
 
-## TODO
-These are things you can collaborate
+## Installation
+```
+git clone https://github.com/bayartsogt-ya/mnpolarity.git && cd mnpolarity
+pip install -r requirements.txt
+```
 
+## Structure
+```
+.
+├── ...
+├── configs
+├── data
+│   ├── lf_helpers
+│   │   └── negative
+│   │       ├── emojis.txt
+│   │       ├── phrases.txt
+│   │       └── words.txt
+│   └── train
+│       ├── twint
+│       │   ├── bad_word1.csv
+│       │   ├── bad_word2.csv
+│       │   └── ...
+│       └── twitter_dump
+│           ├── dump1.csv
+│           ├── dump2.csv
+│           └── ...
+├── mnpolarity
+│   ├── labeling_functions
+│   │   ├── custom_lfs.py
+│   │   └── ...
+│   ├── models.py
+│   └── ...
+└── ...
+```
+
+## Train Simplest Model
+```
+python train_simplest.py
+```
+
+## How can you improve
+- Improve [Negative List](./data/labeling_functions/negative)
+- Add more [custom labeling functions](./mnpolarity/labeling_functions/custom_lfs.py)
+- Try&Feedback. If you have any request or idea to improve, [please email to me](mailto:bayartsogt.yadamsuren@gmail.com)
+
+## TODO
 - [ ] Negative list completion
 - [ ] Positive list creation
 - [ ] Negative list completion
@@ -62,3 +84,14 @@ These are things you can collaborate
 * Data Programming [read more](https://arxiv.org/abs/1605.07723)
 * Software 2.0 [read more](https://karpathy.medium.com/software-2-0-a64152b37c35)
 
+## Citation
+```
+@misc{mnpolarity,
+  author = {Bayartsogt Yadamsuren},
+  title = {Weakly-Supervised Polarity Classification in Mongolian},
+  year = {2021},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/bayartsogt-ya/mnpolarity/}}
+}
+```

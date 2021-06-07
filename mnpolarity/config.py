@@ -3,8 +3,7 @@ from .utils import read_config
 
 # --------------- Configuration ---------------
 package_dir = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
-    "..", "..",
+    os.path.dirname(os.path.abspath(__file__)), "..",
 )
 
 config = read_config(
@@ -13,3 +12,5 @@ config = read_config(
 
 config["package_dir"] = package_dir
 config["data_dir"] = os.path.join(package_dir, "data")
+
+print(f"""---------- CONFIG ----------\n{config}\n""")
