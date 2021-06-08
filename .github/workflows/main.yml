@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Github CLI auth test
         run: |
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            gh release list
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          gh release list
 
       - name: Git Commands test
         run: |
