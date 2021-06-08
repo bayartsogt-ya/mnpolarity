@@ -39,4 +39,7 @@ jobs:
         run: |
           ls -la
           python3 --version
-          git status
+          pip install -r requirements.txt
+          python train_simplest.py
+          ls -la output/*/*
+          echo "Done"
