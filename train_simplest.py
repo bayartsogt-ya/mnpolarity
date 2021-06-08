@@ -15,33 +15,10 @@ from mnpolarity.utils import read_all_train_data
 
 
 if __name__ == "__main__":
-    """
-    How data folder should look like:
-    ```
-    data
-        labeling_function_helpers
-            negative
-                words.txt
-                phrases.txt
-                words.txt
-        train
-            twitter_dump
-                dump1.csv
-                dump2.csv
-                ...
-            twint  ---> this should automatically downloaded during LF creation
-                word1.csv
-                word2.csv
-                ...
-
-        test.csv (optional)
-        valid.csv (optional)
-    ```
-    """
 
     st = time.time()
     output_dir = os.path.join(
-        config["package_dir"], "output", str(st))
+        config["package_dir"], "output", "0.0")
 
     print("--------------------- -1. create LFS ---------------------")
     lfs = get_all_lfs()
@@ -118,7 +95,6 @@ if __name__ == "__main__":
     vectors = vectorizer.transform([t.lower() for t in text])
     probs = sklearn_model.predict_proba(vectors)
 
-    print("------------------------------------------")
     preds = probs.argmax(-1)
     for i, t in enumerate(text):
         pred = "NEGATIVE" if preds[i] == 1 else "ABSTRAIN"
