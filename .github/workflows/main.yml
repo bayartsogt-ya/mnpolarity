@@ -34,3 +34,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Some fs test
+        run: |
+          ls -la
+          python3 --version
+          git status
