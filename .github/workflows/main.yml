@@ -44,10 +44,10 @@ jobs:
         run: pip install -r requirements.txt
       - name: Train model
         run: |
-          sed -i -e '1s/^/```\n/' train_log.txt
           python train_simplest.py | tee train_log.txt
       - name: Publish the New Binary
         run: |
           GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
             bash .github/workflows/publish_new.sh
+          sed -i -e '1s/^/```\n/' train_log.txt
           echo '```' >> train_log.txt
