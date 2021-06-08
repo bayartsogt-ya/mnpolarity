@@ -30,7 +30,7 @@ jobs:
             gh release list
 
       - name: Git Commands test
-        run 
+        run: |
           git status
           git pull
           git tag
