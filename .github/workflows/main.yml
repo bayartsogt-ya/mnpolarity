@@ -24,26 +24,27 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      # - name: Github CLI auth test
-      #   run: |
-      #     GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-      #       gh release list
-
-      # - name: Git Commands test
-      #   run: |
-      #     git status
-      #     git pull
-      #     echo $(git tag | tail -1)
-      
-      # - name: Run a multi-line script
-      #   run: |
-      #     echo Add other actions to build,
-      #     echo test, and deploy your project.
-      - name: Install Requirements
-        run: pip install -r requirements.txt
-      - name: Train model
-        run: python train_simplest.py | tee train_log.txt
-      - name: Publish the New Binary
+      - name: Github CLI auth test
         run: |
           GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-            bash .github/workflows/publish_new.sh
+            gh release list
+
+      - name: Git Commands test
+        run: |
+          git fetch --prune --unshallow --tags
+          echo $(git tag | tail -1)
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+
+      # - name: Install Requirements
+      #   run: pip install -r requirements.txt
+      # - name: Train model
+      #   run: python train_simplest.py | tee train_log.txt
+      # - name: Publish the New Binary
+      #   run: |
+      #     GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+      #       bash .github/workflows/publish_new.sh
