@@ -33,7 +33,7 @@ unzip output/0.0.zip -d output && rm output/0.0.zip
 >>> from mnpolarity.models import SimplestModel
 >>> model = SimplestModel()
 >>> model.load()
->>> prediction = model.predict("эд нарыг үзэн ядаж байна")  # https://twitter.com/hariad_uyanga/status/1253729084858761216")
+>>> prediction = model.predict("эд нарыг үзэн ядаж байна")  # https://twitter.com/tsbat_IT/status/937989630472761344
 >>> prediction["prettier"]
 `эд нарыг үзэн ядаж байна` => NEGATIVE (0.96)
 >>> prediction
