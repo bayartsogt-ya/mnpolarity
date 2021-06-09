@@ -22,14 +22,27 @@ python3 -m venv env && source env/bin/activate
 pip install -r requirements.txt
 ```
 
+Download *latest* pre-trained models
+```
+wget https://github.com/bayartsogt-ya/mnpolarity/releases/latest/download/0.0.zip -P output/
+unzip output/0.0.zip -d output && rm output/0.0.zip
+```
+
 ## Usage
 ```python
 >>> from mnpolarity.models import SimplestModel
 >>> model = SimplestModel()
 >>> model.load()
->>> prediction = model.predict("Чи ямар тэнэг сда вэ. Одоо чамтай - чиний миний санал зөв гэж би маргах уу")  # https://twitter.com/hariad_uyanga/status/1253729084858761216")
->>> prediction["label"]
-NEGATIVE
+>>> prediction = model.predict("эд нарыг үзэн ядаж байна")  # https://twitter.com/hariad_uyanga/status/1253729084858761216")
+>>> prediction["prettier"]
+`эд нарыг үзэн ядаж байна` => NEGATIVE (0.96)
+>>> prediction
+{
+  'pred': 1, 
+  'label': 'NEGATIVE', 
+  'prob': 0.9598129979059339, 
+  'prettier': '`эд нарыг үзэн ядаж байна` => NEGATIVE (0.96)'
+}
 ```
 
 ## Train Simplest Model
