@@ -1,4 +1,4 @@
-# Mongolian Polarity Detection in Weakly Supervised manner
+# MNPolarity - Mongolian Polarity Detection in Weakly Supervised manner
 
 `#nolabel #tweet #classification #snorkel #weaklysupervised #dataprogramming #software2.0` 
 
