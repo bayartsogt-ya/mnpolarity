@@ -80,7 +80,7 @@ python train_simplest.py
 ```
 
 ## How can you improve
-- Improve [Negative List](./data/labeling_functions/negative)
+- Improve [Negative List](./data/lf_helpers/negative)
 - Add more [custom labeling functions](./mnpolarity/labeling_functions/custom_lfs.py)
 - Try&Feedback. If you have any request or idea to improve, [please email to me](mailto:bayartsogt.yadamsuren@gmail.com)
 
