@@ -6,6 +6,8 @@ Tweet polarization can be useful in many analysis as an extra factor. However, b
 
 *This project is highly dependant on snorkel.ai*
 
+![mnpolarity-diagram.jpg](.images/mnpolarity-diagram.jpg)
+
 Contents:
 - [Installation](#Installation)
 - [Usage](#Usage)
